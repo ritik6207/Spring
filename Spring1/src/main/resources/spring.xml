@@ -10,12 +10,13 @@
 
     <bean id="alien1" class="org.learn.app.Alien">
         <property name="age" value="21"></property>
+        <property name="lap" ref="lap1"></property>
     </bean>
 
     <!--    <bean id="alien2" class="org.learn.app.Alien">-->
     <!--    </bean>-->
 
-    <bean id="lap" class="org.learn.app.Laptop">
+    <bean id="lap1" class="org.learn.app.Laptop">
     </bean>
 
 </beans>
