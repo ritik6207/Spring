@@ -7,7 +7,7 @@ public class Alien {
     private int age;
     private Computer com;
     public Alien(){
-        System.out.println("Object created");
+//        System.out.println("Object created");
     }
 
 //    @ConstructorProperties({"age", "lap"})
@@ -17,8 +17,8 @@ public class Alien {
 //    }
 
     public void code(){
-        com.compile();
         System.out.println("Codding...");
+        com.compile();
     }
 
     public int getAge() {
@@ -26,7 +26,7 @@ public class Alien {
     }
 
     public void setAge(int age) {
-        System.out.println("Setter called");
+//        System.out.println("Setter called");
         this.age = age;
     }
 

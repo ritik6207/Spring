@@ -8,25 +8,31 @@
     <!-- Two type of "scope" 1. Singleton and 2.Prototype-->
     <!--    <bean id="alien1" class="org.learn.app.Alien" scope="prototype"></bean>-->
 
-    <bean id="alien1" class="org.learn.app.Alien">
+    <bean id="alien1" class="org.learn.app.Alien" autowire="byType">
+
+            <property name="age" value="24"/>
+<!--            <property name="com" ref="com"/>-->
+
 <!--        <constructor-arg type="org.learn.app.Laptop" ref="lap1"/>-->
 <!--        <constructor-arg value="25"/>-->
 
 <!--        <constructor-arg index="1" ref="lap1"/>-->
 <!--        <constructor-arg index="0" value="25"/>-->
 
-        <constructor-arg name="lap" ref="lap1"/>
-        <constructor-arg name="age" value="25"/>
+<!--        <constructor-arg name="lap" ref="lap1"/>-->
+<!--        <constructor-arg name="age" value="25"/>-->
 
 
 
-<!--        <property name="lap" ref="lap1"/>-->
     </bean>
 
     <!--    <bean id="alien2" class="org.learn.app.Alien">-->
     <!--    </bean>-->
 
-    <bean id="lap1" class="org.learn.app.Laptop">
+<!--    <bean id="com1" class="org.learn.app.Laptop">-->
+<!--    </bean>-->
+
+    <bean id="com" class="org.learn.app.Desktop">
     </bean>
 
 </beans>

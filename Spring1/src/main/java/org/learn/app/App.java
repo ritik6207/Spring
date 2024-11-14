@@ -13,7 +13,5 @@ public class App
 //        obj1.setAge(21);
         System.out.println(obj1.getAge());
         obj1.code();
-
-
     }
 }
