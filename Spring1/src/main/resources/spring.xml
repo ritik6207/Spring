@@ -9,8 +9,18 @@
     <!--    <bean id="alien1" class="org.learn.app.Alien" scope="prototype"></bean>-->
 
     <bean id="alien1" class="org.learn.app.Alien">
-        <property name="age" value="21"></property>
-        <property name="lap" ref="lap1"></property>
+<!--        <constructor-arg type="org.learn.app.Laptop" ref="lap1"/>-->
+<!--        <constructor-arg value="25"/>-->
+
+<!--        <constructor-arg index="1" ref="lap1"/>-->
+<!--        <constructor-arg index="0" value="25"/>-->
+
+        <constructor-arg name="lap" ref="lap1"/>
+        <constructor-arg name="age" value="25"/>
+
+
+
+<!--        <property name="lap" ref="lap1"/>-->
     </bean>
 
     <!--    <bean id="alien2" class="org.learn.app.Alien">-->

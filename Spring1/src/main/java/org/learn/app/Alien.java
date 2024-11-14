@@ -1,5 +1,7 @@
 package org.learn.app;
 
+import java.beans.ConstructorProperties;
+
 public class Alien {
 
     private int age;
@@ -7,6 +9,13 @@ public class Alien {
     public Alien(){
         System.out.println("Object created");
     }
+
+    @ConstructorProperties({"age", "lap"})
+    public Alien(int age, Laptop lap) {
+        this.age = age;
+        this.lap = lap;
+    }
+
     public void code(){
         lap.compile();
         System.out.println("Codding...");
