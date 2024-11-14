@@ -9,15 +9,11 @@ public class App
     {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
         Alien obj1  = (Alien) context.getBean("alien1");
+//        inject the setter throw xml file
+//        obj1.setAge(21);
+        System.out.println(obj1.getAge());
+        obj1.code();
 
-//        Change the value of age
-        obj1.age = 23;
-        System.out.println(obj1.age);
-//        obj1.code();
 
-
-        Alien obj2  = (Alien) context.getBean("alien1");
-        System.out.println(obj2.age);
-//        obj2.code();
     }
 }

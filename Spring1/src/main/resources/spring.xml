@@ -5,13 +5,15 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- bean definitions here -->
+    <!-- Two type of "scope" 1. Singleton and 2.Prototype-->
+    <!--    <bean id="alien1" class="org.learn.app.Alien" scope="prototype"></bean>-->
 
-<!-- Two type of "scope" 1. Singleton and 2.Prototype-->
-    <bean id="alien1" class="org.learn.app.Alien" scope="prototype">
+    <bean id="alien1" class="org.learn.app.Alien">
+        <property name="age" value="21"></property>
     </bean>
 
-<!--    <bean id="alien2" class="org.learn.app.Alien">-->
-<!--    </bean>-->
+    <!--    <bean id="alien2" class="org.learn.app.Alien">-->
+    <!--    </bean>-->
 
     <bean id="lap" class="org.learn.app.Laptop">
     </bean>
