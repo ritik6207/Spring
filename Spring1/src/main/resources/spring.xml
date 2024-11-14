@@ -32,7 +32,7 @@
     <bean id="com1" class="org.learn.app.Laptop" primary="true">
     </bean>
 
-    <bean id="com" class="org.learn.app.Desktop">
+    <bean id="com" class="org.learn.app.Desktop" lazy-init="true">
     </bean>
 
 </beans>
