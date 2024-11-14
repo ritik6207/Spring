@@ -6,7 +6,8 @@
 
     <!-- bean definitions here -->
 
-    <bean id="alien1" class="org.learn.app.Alien">
+<!-- Two type of "scope" 1. Singleton and 2.Prototype-->
+    <bean id="alien1" class="org.learn.app.Alien" scope="prototype">
     </bean>
 
 <!--    <bean id="alien2" class="org.learn.app.Alien">-->
