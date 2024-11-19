@@ -1,15 +1,18 @@
 package org.learn.app;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.beans.ConstructorProperties;
 
 @Component
-
 public class Alien {
 
     private int age;
+
+
     private Computer com;
     public Alien(){
         System.out.println("Alien Object created....");
@@ -38,7 +41,8 @@ public class Alien {
     public Computer getCom() {
         return com;
     }
-
+    @Qualifier("laptop")
+    @Autowired
     public void setCom(Computer com) {
         this.com = com;
     }
