@@ -41,8 +41,9 @@ public class Alien {
     public Computer getCom() {
         return com;
     }
-    @Qualifier("laptop")
+
     @Autowired
+    @Qualifier("laptop")
     public void setCom(Computer com) {
         this.com = com;
     }
