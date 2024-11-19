@@ -1,4 +1,4 @@
-package com.learn;
+package com.learn.model;
 
 public interface Computer {
     void compile();

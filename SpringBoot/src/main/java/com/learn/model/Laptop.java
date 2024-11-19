@@ -1,4 +1,4 @@
-package com.learn;
+package com.learn.model;
 
 import org.springframework.stereotype.Component;
 
