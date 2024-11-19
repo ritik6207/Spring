@@ -1,6 +1,11 @@
 package org.learn.app;
 
+
+import org.springframework.stereotype.Component;
+
 import java.beans.ConstructorProperties;
+
+@Component
 
 public class Alien {
 
