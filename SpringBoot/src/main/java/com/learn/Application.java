@@ -11,6 +11,7 @@ public class Application {
 		ApplicationContext context = SpringApplication.run(Application.class, args);
 
 		Alien obj = context.getBean(Alien.class);
+		System.out.println(obj.getAge());
 		obj.code();
 	}
 
