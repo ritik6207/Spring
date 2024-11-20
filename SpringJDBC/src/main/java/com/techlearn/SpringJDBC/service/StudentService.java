@@ -22,7 +22,7 @@ public class StudentService {
     }
 
     public void addStudent(Student st) {
-        repo.save();
+        repo.save(st);
     }
 
     public List<Student> getStudent() {
