@@ -5,7 +5,12 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     </body>
-        <h2>Result is:  ${result} </h2>
+
+
+        <h2>Welcome To TechLearn  </h2>
+        <p> ${alien} </p>
+
+        <p>Welcome to ${course} world..</p>
 
     </body>
 </html>
