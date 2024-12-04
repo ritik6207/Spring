@@ -28,6 +28,12 @@ public class JobRestController {
         return service.getJob(postId);
     }
 
+//    Search job using keyword
+    @GetMapping("jobPosts/keyword/{keyword}")
+    public List<JobPost> searchByKeyword(@PathVariable("keyword") String keyword){
+        return service.search(keyword);
+    }
+
 //    add the job
     @PostMapping("jobPost")
     public JobPost addJob(@RequestBody JobPost jobPost){
@@ -36,7 +42,7 @@ public class JobRestController {
     }
 
 //    Update the job
-    @PutMapping (path = "jobPost", produces = {"application/json"})
+    @PutMapping ("jobPost")
     public JobPost updateJob(@RequestBody JobPost jobPost){
         service.updateJob(jobPost);
         return service.getJob(jobPost.getPostId());
