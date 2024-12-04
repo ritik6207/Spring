@@ -42,8 +42,17 @@ public class SpringDataJpaApplication {
 //		find by id
 //		System.out.println(repo.findById(102));
 
-		Optional<Student> s = repo.findById(103);
-		System.out.println(s.orElse(new Student()));
+//		Optional<Student> s = repo.findById(103);
+//		System.out.println(s.orElse(new Student()));
+
+//		find by Name
+//		System.out.println(repo.findByName("Ritik"));
+
+//		find by Marks
+//		System.out.println(repo.findByMarks(87));
+
+//		find marks GreaterThen
+		System.out.println(repo.findByMarksGreaterThan(78));
 	}
 
 }
