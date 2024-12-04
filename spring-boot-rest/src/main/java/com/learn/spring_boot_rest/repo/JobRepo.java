@@ -1,156 +1,166 @@
 package com.learn.spring_boot_rest.repo;
 
 import com.learn.spring_boot_rest.model.JobPost;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.List;
 
 @Repository
-public class JobRepo {
-    // arrayList to store JobPost objects
-    List<JobPost> jobs = new ArrayList<>();
+public interface JobRepo extends JpaRepository<JobPost, Integer> {
 
-    // ****************************************************************************
+}
 
-    // constructor->injecting objects into ArrayList defined above.
-    public JobRepo() {
 
-        // Java Developer Job Post
-        jobs.add(new JobPost(1, "Java Developer", "Must have good experience in core Java and advanced Java", 2,
-                List.of("Core Java", "J2EE", "Spring Boot", "Hibernate")));
 
-        // Frontend Developer Job Post
-        jobs.add(
-                new JobPost(2, "Frontend Developer",
-                        "Experience in building responsive web applications using React",
-                        3, List.of("HTML", "CSS", "JavaScript", "React")));
 
-        // Data Scientist Job Post
-        jobs.add(new JobPost(3, "Data Scientist", "Strong background in machine learning and data analysis", 4,
-                List.of("Python", "Machine Learning", "Data Analysis")));
+/*
+// arrayList to store JobPost objects
+List<JobPost> jobs = new ArrayList<>();
 
-        // Network Engineer Job Post
-        jobs.add(new JobPost(4, "Network Engineer",
-                "Design and implement computer networks for efficient data communication", 5,
-                List.of("Networking", "Cisco", "Routing", "Switching")));
+// ****************************************************************************
 
-        // Mobile App Developer Job Post
-        jobs
-                .add(new JobPost(5, "Mobile App Developer",
-                        "Experience in mobile app development for iOS and Android",
-                        3, List.of("iOS Development", "Android Development", "Mobile App")));
+// constructor->injecting objects into ArrayList defined above.
+public JobRepo() {
 
-        // DevOps Engineer Job Post
-        jobs.add(
-                new JobPost(6, "DevOps Engineer",
-                        "Implement and manage continuous integration and delivery pipelines",
-                        4, List.of("DevOps", "CI/CD", "Docker", "Kubernetes")));
+    // Java Developer Job Post
+    jobs.add(new JobPost(1, "Java Developer", "Must have good experience in core Java and advanced Java", 2,
+            List.of("Core Java", "J2EE", "Spring Boot", "Hibernate")));
 
-        // UI/UX Designer Job Post
-        jobs
-                .add(new JobPost(7, "UI/UX Designer",
-                        "Create engaging user experiences and intuitive user interfaces",
-                        2, List.of("User Experience", "User Interface Design", "Prototyping")));
+    // Frontend Developer Job Post
+    jobs.add(
+            new JobPost(2, "Frontend Developer",
+                    "Experience in building responsive web applications using React",
+                    3, List.of("HTML", "CSS", "JavaScript", "React")));
 
-        // Cybersecurity Analyst Job Post
-        jobs
-                .add(new JobPost(8, "Cybersecurity Analyst",
-                        "Protect computer systems and networks from cyber threats",
-                        4, List.of("Cybersecurity", "Network Security", "Incident Response")));
+    // Data Scientist Job Post
+    jobs.add(new JobPost(3, "Data Scientist", "Strong background in machine learning and data analysis", 4,
+            List.of("Python", "Machine Learning", "Data Analysis")));
 
-        // Full Stack Developer Job Post
-        jobs.add(new JobPost(9, "Full Stack Developer", "Experience in both front-end and back-end development",
-                5, List.of("JavaScript", "Node.js", "React", "Spring", "MongoDB")));
+    // Network Engineer Job Post
+    jobs.add(new JobPost(4, "Network Engineer",
+            "Design and implement computer networks for efficient data communication", 5,
+            List.of("Networking", "Cisco", "Routing", "Switching")));
 
-        // Cloud Architect Job Post
-        jobs.add(new JobPost(10, "Cloud Architect", "Design and implement cloud infrastructure solutions", 6,
-                List.of("Cloud Computing", "AWS", "Azure", "Google Cloud")));
+    // Mobile App Developer Job Post
+    jobs
+            .add(new JobPost(5, "Mobile App Developer",
+                    "Experience in mobile app development for iOS and Android",
+                    3, List.of("iOS Development", "Android Development", "Mobile App")));
 
-        // Job Post 11
-        jobs.add(new JobPost(11, "Software Tester", "Ensure software quality through testing and validation", 3,
-                List.of("Testing", "JUnit", "Selenium", "TestNG")));
+    // DevOps Engineer Job Post
+    jobs.add(
+            new JobPost(6, "DevOps Engineer",
+                    "Implement and manage continuous integration and delivery pipelines",
+                    4, List.of("DevOps", "CI/CD", "Docker", "Kubernetes")));
 
-        // Job Post 12
-        jobs.add(new JobPost(12, "React Native Developer",
-                "Develop cross-platform mobile applications using React Native", 2,
-                List.of("React Native", "JavaScript", "Mobile App Development")));
+    // UI/UX Designer Job Post
+    jobs
+            .add(new JobPost(7, "UI/UX Designer",
+                    "Create engaging user experiences and intuitive user interfaces",
+                    2, List.of("User Experience", "User Interface Design", "Prototyping")));
 
-        // Job Post 13
-        jobs.add(new JobPost(13, "Business Analyst", "Analyze business processes and recommend improvements", 4,
-                List.of("Business Analysis", "Requirements Gathering", "Process Modeling")));
+    // Cybersecurity Analyst Job Post
+    jobs
+            .add(new JobPost(8, "Cybersecurity Analyst",
+                    "Protect computer systems and networks from cyber threats",
+                    4, List.of("Cybersecurity", "Network Security", "Incident Response")));
 
-        // Job Post 14
-        jobs.add(new JobPost(14, "Embedded Systems Engineer",
-                "Design and develop embedded systems for hardware applications", 5,
-                List.of("Embedded Systems", "C/C++", "Microcontrollers", "RTOS")));
+    // Full Stack Developer Job Post
+    jobs.add(new JobPost(9, "Full Stack Developer", "Experience in both front-end and back-end development",
+            5, List.of("JavaScript", "Node.js", "React", "Spring", "MongoDB")));
 
-        // Job Post 15
-        jobs.add(new JobPost(15, "Content Writer",
-                "Create engaging and informative content for websites and publications", 2,
-                List.of("Content Writing", "Copywriting", "SEO", "Creative Writing")));
+    // Cloud Architect Job Post
+    jobs.add(new JobPost(10, "Cloud Architect", "Design and implement cloud infrastructure solutions", 6,
+            List.of("Cloud Computing", "AWS", "Azure", "Google Cloud")));
 
-        // Job Post 16
-        jobs.add(new JobPost(16, "Business Intelligence Analyst",
-                "Utilize data to provide insights and support decision-making", 4,
-                List.of("Business Intelligence", "SQL", "Data Warehousing", "Tableau")));
+    // Job Post 11
+    jobs.add(new JobPost(11, "Software Tester", "Ensure software quality through testing and validation", 3,
+            List.of("Testing", "JUnit", "Selenium", "TestNG")));
 
-        // Job Post 17
-        jobs.add(new JobPost(17, "UX Researcher", "Conduct user research to inform the design process", 3,
-                List.of("User Research", "Usability Testing", "Human-Computer Interaction")));
+    // Job Post 12
+    jobs.add(new JobPost(12, "React Native Developer",
+            "Develop cross-platform mobile applications using React Native", 2,
+            List.of("React Native", "JavaScript", "Mobile App Development")));
 
-        // Job Post 18
-        jobs
-                .add(new JobPost(18, "Backend Developer",
-                        "Build server-side logic and databases for web applications",
-                        4, List.of("Java", "Spring", "Node.js", "MongoDB")));
+    // Job Post 13
+    jobs.add(new JobPost(13, "Business Analyst", "Analyze business processes and recommend improvements", 4,
+            List.of("Business Analysis", "Requirements Gathering", "Process Modeling")));
 
-        // Job Post 19
-        jobs.add(new JobPost(19, "Game Developer", "Create and optimize games for various platforms", 3,
-                List.of("Game Development", "Unity", "C#", "3D Modeling")));
+    // Job Post 14
+    jobs.add(new JobPost(14, "Embedded Systems Engineer",
+            "Design and develop embedded systems for hardware applications", 5,
+            List.of("Embedded Systems", "C/C++", "Microcontrollers", "RTOS")));
 
-        // Job Post 20
-        jobs
-                .add(new JobPost(20, "IT Project Manager",
-                        "Lead and manage IT projects from initiation to completion",
-                        6, List.of("Project Management", "Agile", "Scrum", "Risk Management")));
+    // Job Post 15
+    jobs.add(new JobPost(15, "Content Writer",
+            "Create engaging and informative content for websites and publications", 2,
+            List.of("Content Writing", "Copywriting", "SEO", "Creative Writing")));
 
-    }
+    // Job Post 16
+    jobs.add(new JobPost(16, "Business Intelligence Analyst",
+            "Utilize data to provide insights and support decision-making", 4,
+            List.of("Business Intelligence", "SQL", "Data Warehousing", "Tableau")));
 
-    // ****************************************************************************
+    // Job Post 17
+    jobs.add(new JobPost(17, "UX Researcher", "Conduct user research to inform the design process", 3,
+            List.of("User Research", "Usability Testing", "Human-Computer Interaction")));
 
-    public List<JobPost> getAllJobs() {
-        return jobs;
-    }
+    // Job Post 18
+    jobs
+            .add(new JobPost(18, "Backend Developer",
+                    "Build server-side logic and databases for web applications",
+                    4, List.of("Java", "Spring", "Node.js", "MongoDB")));
 
-    public void addJob(JobPost job) {
-        jobs.add(job);
-        System.out.println(jobs);
-    }
+    // Job Post 19
+    jobs.add(new JobPost(19, "Game Developer", "Create and optimize games for various platforms", 3,
+            List.of("Game Development", "Unity", "C#", "3D Modeling")));
 
-    public JobPost getJob(int postId) {
-        for(JobPost job : jobs){
-            if (job.getPostId() == postId){
-                return job;
-            }
-        }
+    // Job Post 20
+    jobs
+            .add(new JobPost(20, "IT Project Manager",
+                    "Lead and manage IT projects from initiation to completion",
+                    6, List.of("Project Management", "Agile", "Scrum", "Risk Management")));
 
-        return  null;
-    }
+}
 
-    public void updateJob(JobPost jobPost) {
-        for (JobPost jobPost1 : jobs){
-            if (jobPost1.getPostId() == jobPost.getPostId()){
-                jobPost1.setPostId(jobPost.getPostId());
-                jobPost1.setPostProfile(jobPost.getPostProfile());
-                jobPost1.setPostDesc(jobPost.getPostDesc());
-                jobPost1.setReqExperience(jobPost.getReqExperience());
-                jobPost1.setPostTechStack(jobPost.getPostTechStack());
-            }
+// ****************************************************************************
+/*
+public List<JobPost> getAllJobs() {
+    return jobs;
+}
+
+public void addJob(JobPost job) {
+    jobs.add(job);
+    System.out.println(jobs);
+}
+
+public JobPost getJob(int postId) {
+    for(JobPost job : jobs){
+        if (job.getPostId() == postId){
+            return job;
         }
     }
 
-    public void deleteJob(int postId) {
-        jobs.removeIf(jobPost -> jobPost.getPostId() == postId);
+    return  null;
+}
+
+
+ */
+/*
+public void updateJob(JobPost jobPost) {
+    for (JobPost jobPost1 : jobs){
+        if (jobPost1.getPostId() == jobPost.getPostId()){
+            jobPost1.setPostId(jobPost.getPostId());
+            jobPost1.setPostProfile(jobPost.getPostProfile());
+            jobPost1.setPostDesc(jobPost.getPostDesc());
+            jobPost1.setReqExperience(jobPost.getReqExperience());
+            jobPost1.setPostTechStack(jobPost.getPostTechStack());
+        }
     }
 }
+
+public void deleteJob(int postId) {
+    jobs.removeIf(jobPost -> jobPost.getPostId() == postId);
+}
+
+ */

@@ -49,4 +49,10 @@ public class JobRestController {
         return "Successfully Deleted postId:  " + postId;
     }
 
+    @GetMapping("load")
+    public String loadData(){
+        service.load();
+        return "success";
+    }
+
 }
