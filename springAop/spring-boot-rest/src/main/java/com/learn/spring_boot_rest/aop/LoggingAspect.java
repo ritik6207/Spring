@@ -15,8 +15,8 @@ public class LoggingAspect {
 
 
 //    return type, class-name.method-name(agrs)
-    @Before("execution(* com.learn.spring_boot_rest.service.JobService*(..)")
+    @Before("execution(* com.learn.spring_boot_rest.service.JobService.*(..))")
     public void logMethodCall(){
-        LOGGER.info("Method call");
+        LOGGER.info("Log Method call");
     }
 }
