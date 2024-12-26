@@ -1,6 +1,8 @@
 package com.learn.spring_security.controller;
 
 import com.learn.spring_security.model.Student;
+import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,6 +18,11 @@ public class StudentController {
             new Student(1, "Ritik", "Java"),
             new Student(2, "Supriya", "ReactJS")
     ));
+
+    @GetMapping("csrf-token")
+    public CsrfToken getCsrfToken(HttpServletRequest request){
+      return (CsrfToken) request.getAttribute("_csrf");
+    }
 
     @GetMapping("students")
     public List<Student> getStudents(){
