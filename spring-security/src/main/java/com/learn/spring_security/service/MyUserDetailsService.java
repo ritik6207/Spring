@@ -1,5 +1,7 @@
 package com.learn.spring_security.service;
 
+import com.learn.spring_security.dao.UserRepo;
+import com.learn.spring_security.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -10,10 +12,17 @@ import org.springframework.stereotype.Service;
 public class MyUserDetailsService implements UserDetailsService {
 
     @Autowired
-    private UserRepo  repo;
+    private UserRepo repo;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return null;
+
+        User user = repo.findByUsername(username);
+        if (user == null){
+            System.out.println("User 404");
+            throw new UsernameNotFoundException("User 404");
+        }
+        return User;
+
     }
 }
