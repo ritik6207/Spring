@@ -18,29 +18,14 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
-        Customizer<CsrfConfigurer<HttpSecurity>> custCsrf = new Customizer<CsrfConfigurer<HttpSecurity>>() {
-            @Override
-            public void customize(CsrfConfigurer<HttpSecurity> configure) {
-                configure.disable();
-            }
-        } ;
-        http.csrf(custCsrf);
 
-        Customizer<AuthorizeHttpRequestsConfigurer<HttpSecurity>.AuthorizationManagerRequestMatcherRegistry> custHttp  = new Customizer<AuthorizeHttpRequestsConfigurer<org.springframework.security.config.annotation.web.builders.HttpSecurity>.AuthorizationManagerRequestMatcherRegistry>() {
-            @Override
-            public void customize(AuthorizeHttpRequestsConfigurer<HttpSecurity>.AuthorizationManagerRequestMatcherRegistry authorizationManagerRequestMatcherRegistry) {
-                authorizationManagerRequestMatcherRegistry.anyRequest().authenticated();
-            }
-        };
 
-        http.authorizeHttpRequests(custHttp);
-
-//        http.csrf(customizer -> customizer.disable());
-//        http.authorizeHttpRequests(request -> request.anyRequest().authenticated());
-////        No need to use formLogin
-////        http.formLogin(Customizer.withDefaults());
-//        http.httpBasic(Customizer.withDefaults());
-//        http.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+        http.
+                csrf(customizer -> customizer.disable())
+                .authorizeHttpRequests(request -> request.anyRequest().authenticated())
+                .httpBasic(Customizer.withDefaults())
+                .sessionManagement(session ->
+                        session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
         return http.build();
     }
