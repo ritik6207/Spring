@@ -2,6 +2,7 @@ package com.learn.spring_security.service;
 
 import com.learn.spring_security.dao.UserRepo;
 import com.learn.spring_security.model.User;
+import com.learn.spring_security.model.UserPrinciple;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -22,7 +23,7 @@ public class MyUserDetailsService implements UserDetailsService {
             System.out.println("User 404");
             throw new UsernameNotFoundException("User 404");
         }
-        return User;
+        return new UserPrinciple(user);
 
     }
 }
